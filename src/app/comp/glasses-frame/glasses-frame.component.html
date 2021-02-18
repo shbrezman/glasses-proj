@@ -1,0 +1,16 @@
+<h1>Choose Your Frame:</h1>
+<br>
+
+
+<div class="row">
+
+    <div class="card col m-3" *ngFor="let frame of frames; index as i">
+        <img style="width:300px;" class="card-img-top" src="{{frame.img}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{frame.brand}}</h5>
+            <p class="card-text">{{frame.details}}</p>
+            <a [routerLink]="['/lens']" class="btn btn-primary" (click)="saveFrame(i)">Choose</a>
+        </div>
+    </div>
+
+</div>

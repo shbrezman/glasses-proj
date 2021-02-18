@@ -1,0 +1,17 @@
+<h1>Choose Your Lens Type:</h1>
+<br>
+
+<div class="form-check">
+        <input #inp class="form-check-input" type="checkbox" value="long" id="flexCheckDefault" (click)="saveLensType(inp.value)">
+        <label class="form-check-label" for="flexCheckDefault">long</label>
+</div>
+<div class="form-check">
+        <input #inp2 class="form-check-input" type="checkbox" value="short" id="flexCheckDefault" (click)="saveLensType(inp2.value)">
+        <label class="form-check-label" for="flexCheckDefault">short</label>
+</div>
+<div class="form-check">
+        <input #inp3 class="form-check-input" type="checkbox" value="multifocal" id="flexCheckDefault" (click)="saveLensType(inp3.value)">
+        <label class="form-check-label" for="flexCheckDefault">multifocal</label>
+</div>
+<br>
+<a [routerLink]="['/eyeMeasurement']" class="btn btn-primary">Next</a>

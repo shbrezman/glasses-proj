@@ -1,0 +1,32 @@
+import { Injectable } from '@angular/core';
+import { frameModel } from '../models/frame.model';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FramesDataService {
+
+  frames: frameModel[] = [
+    {
+      img: "data:image/jpeg;base64,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",
+      brand: "Rayban",
+      details: "veri good glasses"
+    },{
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoPcFN2REhyWaL__7-waPLZM-I_Qksgn_F9fYKlWEasGBJNEDwq_IUiMm_M6PGwUXoTQG4YmE&usqp=CAc",
+      brand: "tommi hilfiger",
+      details: "style glasses"
+    },{
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmitsCqqcFLlQMVlO-BXHAFUHvq3G3vT3RZoyMFaJMs1TNjFOi3PyleUc4BmpoGtv3awbvwU&usqp=CAc",
+      brand: "poncho",
+      details: "kids glasses"
+    },
+    
+  ];
+
+  constructor() { }
+
+  get(): frameModel[]{
+    return this.frames;
+  }
+}

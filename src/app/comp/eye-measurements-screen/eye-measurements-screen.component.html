@@ -1,0 +1,10 @@
+<h1>Type Your Eyes Measurements:</h1>
+<br>
+<div class="container">
+    <span class="m-2"><p>Right eye: <input #re></p></span>
+    <span class="m-2"><p>Left eye: <input #le></p></span>
+    <span class="m-2"><p>Right eye cilinder: <input #rec></p></span>
+    <span class="m-2"><p>Left eye cilinder: <input #lec></p></span>
+    <a  class="btn btn-primary" (click)="saveMeasurements(re.value, le.value, rec.value, lec.value)" [routerLink]="['/final']">Choose</a>
+
+</div>
